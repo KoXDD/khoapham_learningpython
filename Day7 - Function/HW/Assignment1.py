@@ -101,9 +101,47 @@ while True:
         return (y2-y1)/(x2-x1)
     try:
         print("Slope co gia tri la", calculate_slope(x1,x2,y1,y2))
-        break
+        break #trying to break 
     except ValueError as loi: #store cai valueerror message thanh variable loi
-        print("Chuong trinh da bi loi do:", loi)    
+        print("Chuong trinh da bi loi do:", loi)    #neu loi thi lap lai loop
     #raise ValueError("So khong the chia cho 0") = da thay cai message valueerror kia thanh nhu print trong hinh
     #except ValueError as loi:
         #print("Chuong trinh da bi loi do:", loi) do loi o day no la cai minh da raise nen no tra ve message ko chia dc cho 0
+
+
+#7 Quadratic equation is calculated as follows: ax² + bx + c = 0. 
+# Write a function which calculates solution set of a quadratic equation, solve_quadratic_eqn.
+while True:
+    import math
+    a = float(input("Nhap so a:"))
+    b = float(input("Nhap so b:"))
+    c = float(input("Nhap so c:"))
+    if a == 0:
+            print("Phuong trinh bac hai khong ton tai voi a = 0")
+            continue
+    else:
+        def solve_quaratic_eqn(a,b,c):
+            delta = b**2-4*a*c
+            #Nếu Δ > 0: Phương trình có hai nghiệm phân biệt (khác nhau).
+                #cong thuc x = (-b ± √(b² - 4ac)) / 2a.
+            #Nếu Δ = 0: Phương trình có một nghiệm kép (hai nghiệm bằng nhau).
+            #   Khi delta (Δ) bằng 0, phương trình bậc hai có một nghiệm kép. Nghiệm kép này được tính bằng công thức:
+            #   x = -b / 2a, 
+            #   trong đó a và b là các hệ số của phương trình bậc hai. 
+            #Nếu Δ < 0: Phương trình vô nghiệm (không có nghiệm thực).
+            if delta > 0:
+                x1 = (-b + math.sqrt(delta))/(2*a)
+                x2 = (-b - math.sqrt(delta))/(2*a)
+                return(x1,x2)
+            elif delta == 0:
+                x = -b / (2*a) 
+                return(x,) #the nay thi luc nao no cung sex return la tuple chu luc thi tuple luc thi float luc thi none no messy
+            elif delta < 0:
+                print("Phuong trinh vo nghiem")
+                return()
+        ketqua=solve_quaratic_eqn(a,b,c)
+        if ketqua: #o day do tuple co gia tri nen no la true
+            print("Tap nghiem da cho la", ketqua)
+        else: #khi xet den phuong trinh vo nghiem thi no da return mot tuple empty r "()", va empty tuple thi la False mac dinh
+            print("Vo nghiem")
+        break
