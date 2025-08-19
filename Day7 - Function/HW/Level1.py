@@ -208,3 +208,20 @@ def sum_of_numbers(number):
 print(sum_of_numbers(5))  # 15
 print(sum_of_numbers(10)) # 55
 print(sum_of_numbers(100)) # 5050
+
+#14 Declare a function named sum_of_odds. 
+# It takes a number parameter and it adds all the odd numbers in that range.
+def sum_of_odds(number):
+    sums = 0
+    for i in range(number + 1):  # co n
+        if i % 2 != 0:      # check if i is odd
+            sums += i
+    return sums
+
+#15 even
+def sum_of_even(number):
+    sums = 0
+    for i in range(number + 1):  
+        if i % 2 == 0:      
+            sums += i
+    return sums
