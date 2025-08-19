@@ -145,3 +145,66 @@ while True:
         else: #khi xet den phuong trinh vo nghiem thi no da return mot tuple empty r "()", va empty tuple thi la False mac dinh
             print("Vo nghiem")
         break
+
+#8 Declare a function named print_list. 
+# It takes a list as a parameter and it iprints out each element of the list.
+
+
+def print_list(list):
+    for cacitem in list:
+        print(cacitem)
+print_list([1, 2, 3, 4])
+
+
+#9 Declare a function named reverse_list. 
+#It takes an array as a parameter and it returns the reverse of the array (use loops).
+def reverse_list(array):
+    ketqua = [] #ket qua la tap rong
+    for i in range(len(array)-1,-1,-1):
+        ketqua.append(array[i]) #lay gia tri o index i va cho items vao list ketqua
+    return ketqua
+print(reverse_list([1, 2, 3, 4, 5]))
+# [5, 4, 3, 2, 1]
+print(reverse_list(["A", "B", "C"]))
+# ["C", "B", "A"]
+
+#10 Declare a function named capitalize_list_items.
+#  It takes a list as a parameter and it returns a capitalized list of items
+def capitalize_list_items(list):
+    ketqua = []
+    for i in list:
+        ketqua.append(i.capitalize())
+    return ketqua
+print(capitalize_list_items(["a","afw","decusnegus"]))
+
+#11 Declare a function named add_item. It takes a list and an item parameters.
+#  It returns a list with the item added at the end.
+def add_item(lst,item):
+    lst.append(item)
+    return lst
+food_staff = ['Potato', 'Tomato', 'Mango', 'Milk']
+print(add_item(food_staff, 'Meat')) 
+numbers = [2, 3, 7, 9]
+print(add_item(numbers, 5)) 
+del food_staff, numbers
+#12 Declare a function named remove_item. It takes a list and an item parameters.
+#  It returns a list with the item removed from it.
+
+def remove_item(lst, item):
+    lst.remove(item)
+    return lst
+food_staff = ['Potato', 'Tomato', 'Mango', 'Milk']
+print(remove_item(food_staff, 'Mango'))  # ['Potato', 'Tomato', 'Milk'];
+numbers = [2, 3, 7, 9]
+print(remove_item(numbers, 3))  # [2, 7, 9]
+
+#13 Declare a function named sum_of_numbers.
+#  It takes a number parameter and it adds all the numbers in that range.
+def sum_of_numbers(number):
+    sums = 0
+    for i in range(number+1):
+        sums += i
+    return sums
+print(sum_of_numbers(5))  # 15
+print(sum_of_numbers(10)) # 55
+print(sum_of_numbers(100)) # 5050
