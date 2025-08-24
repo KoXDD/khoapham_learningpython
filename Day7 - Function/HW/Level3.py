@@ -5,3 +5,17 @@ def is_prime(n):
             return False
     return True
 print(is_prime(7))
+
+#2
+a="a"
+b="b" 
+c='c'
+list = [1,2,3,a,b,c,c]
+def unique(list):
+    for i in list:
+            if list.count(i) > 1:
+                 return False 
+    return True
+print(unique(list))
+
+#3
